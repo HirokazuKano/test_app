@@ -23,4 +23,12 @@ class Foo
             $this->message = 'CANDY BAR';
         }
     }
+
+    protected function bar2($env)
+    {
+        $this->message = 'PROTECTED BAR';
+        if ($env == 'dev') {
+            $this->message = 'CANDY BAR';
+        }
+    }
 }

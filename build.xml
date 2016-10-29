@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="study project" default="build">
+
+    <target name="build" depends="clean,prepare,phpcs"/>
+
+    <property name="basedir" value="."/>
+    <property name="appdir" value="${basedir}/app"/>
+    <property name="vendorbindir" value="${basedir}/vendor/bin"/>
+
+    <target name="clean" unless="clean.done" description="Cleanup build artifacts">
+        <delete dir="${basedir}/build/api"/><!-- ドキュメント格納dir -->
+        <delete dir="${basedir}/build/coverage"/><!-- coverage公開dir -->
+        <delete dir="${basedir}/build/logs"/><!-- 各結果XML格納dir -->
+        <property name="clean.done" value="true"/>
+    </target>
+
+    <target name="prepare" unless="prepare.done" depends="clean" description="Prepare for build">
+        <mkdir dir="${basedir}/build/api"/>
+        <mkdir dir="${basedir}/build/coverage"/>
+        <mkdir dir="${basedir}/build/logs"/>
+        <property name="prepare.done" value="true"/>
+    </target>
+
+    <!-- PHP_CodeSniffer -->
+    <target name="phpcs"
+            description="Find coding standard violations using PHP_CodeSniffer and log result in XML format">
+        <exec executable="${vendorbindir}/phpcs">
+            <arg value="--report=checkstyle"/>
+            <arg value="--report-file=${basedir}/build/logs/checkstyle.xml"/>
+            <arg value="--standard=PSR2"/>
+            <arg value="--extensions=php"/>
+            <arg path="${basedir}/app"/>
+            <!--<arg path="${basedir}/tests"/>-->
+        </exec>
+    </target>
+
+
+
+    <!-- PHPCPD -->
+    <target name="phpcpd" description="Find duplicate code using PHPCPD">
+        <mkdir dir="${outputdir}"/>
+        <echo>Find duplicate code using PHPCPD</echo>
+        <phpcpd>
+            <!-- 対象ディレクトリをmain下に設定 -->
+            <fileset dir="${appdir}">
+                <!-- 全てのphpファイルのみを対象にする -->
+                <include name="**/*.php" />
+                <!-- vendorsディレクトリ下を対象外にする -->
+                <exclude name="vendor/" />
+            </fileset>
+            <formatter type="pmd" outfile="${outputdir}/cpd.xml"/>
+        </phpcpd>
+    </target>
+
+    <target name="phpdoc2" description="Find duplicate code using PHPCPD">
+        <phpdoc title="API Documentation"
+                destdir="${outputdir}"
+                sourcecode="false"
+                output="HTML:Smarty:PHP">
+            <fileset dir="${appdir}">
+                <include name="**/*.php" />
+            </fileset>
+        </phpdoc>
+    </target>
+
+
+
+    <!-- PHPMD -->
+    <target name="phpmd" description="Perform project mess detection using PHPMD">
+        <exec dir="${basedir}" executable="${vendorbindir}/phpmd" output="${outputdir}/phpmd.log">
+            <arg line="${appdir}" />
+            <arg line="xml" />
+            <arg line="codesize,unusedcode,design,naming" />
+            <arg line="--exclude ${appdir}/Test,${appdir}/Vendor,${appdir}/Plugin,${appdir}/Config/Migration,${appdir}/Config/Schema" />
+            <arg line="--reportfile ${outputdir}/phpmd.xml" />
+        </exec>
+    </target>
+
+    <!-- PHP_CodeSniffer -->
+    <target name="phpcs" description="Generate phpcs.xml using PHP_CodeSniffer" >
+        <mkdir dir="${outputdir}" />
+        <phpcodesniffer standard="PSR2" file="${appdir}/" allowedFileExtensions="php" >
+            <formatter type="checkstyle" outfile="${outputdir}/phpcs.xml"/>
+        </phpcodesniffer>
+    </target>
+
+    <!-- PHPUNIT -->
+    <target name="phpunit">
+        <mkdir dir="${outputdir}" />
+        <mkdir dir="${outputdir}/coverage" />
+        <exec command="${basedir}/vendor/bin/phpunit" logoutput="true" />
+    </target>
+
+
+
+</project>

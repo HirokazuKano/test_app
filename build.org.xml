@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- basedirは基準となるパス。パスはbuild.xmlのあるパス  defaultで最初に見に行くターゲットをbuildにする　-->
+<project name="Project Jenkins" basedir="." default="build">
+    <!-- propertyは変数を格納するとこ　$は変数-->
+    <property name="basedir" value="." />
+    <property name="appdir"  value="${basedir}/application" />
+    <property name="datadir" value="${basedir}/data" />
+    <property name="logdir"  value="${datadir}/logs" />
+
+    <!-- buildターゲットは、dependsで他のターゲットに依存しており、左のターゲットから順に実行する　-->
+    <target name="build" depends="clean,prepare,phpdoc,phpunit">
+    </target>
+
+    <!-- 既存フォルダ削除する処理　-->
+    <target name="clean" description="clean">
+        <delete dir="${logdir}" />
+        <delete dir="${datadir}/phpdoc" />
+        <delete dir="reports" includeemptydirs="true" />
+    </target>
+
+    <!-- レポートなどを格納するフォルダ作成する処理-->
+    <target name="prepare" description="prepare">
+        <mkdir dir="${logdir}" />
+        <mkdir dir="${datadir}/phpdoc" />
+        <mkdir dir="reports" />
+    </target>
+
+    <!-- phpunitの実行　https://www.phing.info/docs/stable/hlpdf/manual.pdfの書き方が公式-->
+    <target name="phpunit">
+        <phpunit haltonfailure="false" printsummary="true" pharlocation="/usr/local/bin/phpunit">
+            <formatter todir="reports" type="xml" outfile="unitreport.xml" />
+            <batchtest>
+                <fileset dir="jenkins/tests">
+                    <include name="**/*Test.php" />
+                </fileset>
+            </batchtest>
+        </phpunit>
+    </target>
+
+    <!-- phpdocの実行　公式による専用のタグがあったが、executable属性からコマンドを実行するようにした-->
+    <target name="phpdoc" description="Generate Application Documentation using PHPDocumentor2">
+        <!-- 公式による専用のタグがあったが動かないのでコメントアウト-->
+        <!--	<phpdoc2 title = "API Documentation"
+                destdir = "doc"
+                template = "responsive-twig">
+                <fileset dir = "jenkins/src/classes">
+                <include name = "**/*.php" />
+                </fileset>
+               </phpdoc2>
+       コメントアウト	-->
+        <!-- executable属性からコマンドを実行するようにした-->
+        <exec dir="${basedir}" executable="phpdoc" output="${logdir}/phpdoc.log">
+            <arg line="run" />
+            <arg line="-t ${datadir}/phpdoc" />
+            <arg line="-d jenkins/src/classes" />
+            <arg line="-p" />
+        </exec>
+    </target>
+</project>
