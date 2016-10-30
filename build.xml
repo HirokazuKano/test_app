@@ -92,12 +92,12 @@
     </target>
 
     <!-- PHPUNIT -->
-    <target name="phpunit">
-        <mkdir dir="${outputdir}" />
-        <mkdir dir="${outputdir}/coverage" />
-        <exec command="${basedir}/vendor/bin/phpunit" logoutput="true" />
+    <target name="phpunit" depends="prepare" description="Run unit tests with PHPUnit">
+        <exec executable="${vendorbindir}/phpunit">
+            <arg value="--configuration"/>
+            <arg path="${basedir}/phpunit.xml"/>
+        </exec>
     </target>
-
 
 
 </project>

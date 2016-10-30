@@ -13,10 +13,25 @@
         syntaxCheck="false"
         bootstrap="./tests/bootstrap.php"
 >
+
+    <logging>
+        <log type="coverage-html" target="build/coverage"/>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+        <log type="coverage-crap4j" target="build/logs/crap4j.xml"/>
+        <log type="coverage-xml" target="build/logs/coverage"/>
+        <log type="junit" target="build/logs/junit.xml"/>
+        <log type="testdox-html" target="build/testdox/index.html"/>
+    </logging>
+
     <testsuite name="sample tests">
         <directory>./tests/TestCase</directory>
     </testsuite>
     <filter>
+        <!-- コードカバレッジ対象のファイルのホワイトリスト -->
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+            <exclude/>
+        </whitelist>
         <blacklist>
             <directory suffix=".php">./vendor</directory>
         </blacklist>
