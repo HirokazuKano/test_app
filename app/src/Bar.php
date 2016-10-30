@@ -14,11 +14,8 @@ class Bar
         return 'merge-ready';
     }
 
-
     public function merge()
     {
         return 'getBarMerge';
     }
-
-
 }

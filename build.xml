@@ -24,9 +24,10 @@
     <!-- PHP_CodeSniffer -->
     <target name="phpcs"
             description="Find coding standard violations using PHP_CodeSniffer and log result in XML format">
-        <exec executable="${vendorbindir}/phpcs">
+        <exec executable="${vendorbindir}/phpcs" output="${basedir}/build/logs/phpcs.log">
             <arg value="--report=checkstyle"/>
-            <arg value="--report-file=${basedir}/build/logs/checkstyle.xml"/>
+            <!--<arg value="&#45;&#45;report-file=${basedir}/build/logs/checkstyle.xml"/>-->
+            <arg line="--report-checkstyle=${basedir}/build/logs/checkstyle.xml" />
             <arg value="--standard=PSR2"/>
             <arg value="--extensions=php"/>
             <arg path="${basedir}/app"/>

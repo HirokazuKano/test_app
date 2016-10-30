@@ -38,7 +38,5 @@ class Baz
 
         return false;
     }
-
-
 }
 //$foo = new Foo();
