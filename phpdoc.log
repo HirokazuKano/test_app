@@ -24,14 +24,14 @@ Parsing /var/www/html/phpunit_study/unittest/app/src/Foo.php
   No summary for method hoge_hoge()
   No summary for property $message
 Storing cache in "/var/www/html/phpunit_study/unittest/build/api" .. OK
-Load cache                                                         ..    0.028s
-Preparing template "clean"                                         ..    0.084s
+Load cache                                                         ..    0.023s
+Preparing template "clean"                                         ..    0.078s
 Preparing 17 transformations                                       ..    0.000s
 Build "elements" index                                             ..    0.000s
-Replace textual FQCNs with object aliases                          ..    0.002s
+Replace textual FQCNs with object aliases                          ..    0.001s
 Resolve @link and @see tags in descriptions                        ..    0.000s
 Enriches inline example tags with their sources                    ..    0.000s
-Build "packages" index                                             ..    0.024s
+Build "packages" index                                             ..    0.021s
 Build "namespaces" index and add namespaces to "elements"          ..    0.000s
 Collect all markers embedded in tags                               ..    0.000s
 Transform analyzed project into artifacts                          .. 
@@ -56,5 +56,5 @@ Applying 17 transformations
   Execute transformation using writer "twig"
   Execute transformation using writer "twig"
   Execute transformation using writer "Graph"
-Unable to find the `dot` command of the GraphViz package. Is GraphViz correctly installed and present in your path?   3.636s
+Unable to find the `dot` command of the GraphViz package. Is GraphViz correctly installed and present in your path?   2.798s
 Analyze results and write report to log                            ..    0.000s
