@@ -16,7 +16,8 @@
     "phpmd/phpmd": "*",
     "sebastian/phpcpd": "*",
     "squizlabs/php_codesniffer": "*",
-    "phpdocumentor/phpdocumentor": "2.*"
+    "phpdocumentor/phpdocumentor": "2.*",
+    "phploc/phploc": "*"
   }
 
 }
