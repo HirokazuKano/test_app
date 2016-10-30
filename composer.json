@@ -15,7 +15,8 @@
     "phing/phing": "2.*",
     "phpmd/phpmd": "*",
     "sebastian/phpcpd": "*",
-    "squizlabs/php_codesniffer": "*"
+    "squizlabs/php_codesniffer": "*",
+    "phpdocumentor/phpdocumentor": "2.*"
   }
 
 }

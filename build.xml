@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="study project" default="build">
 
-    <target name="build" depends="clean,prepare,phpcs,phpmd,phpcpd"/>
+    <target name="build" depends="clean,prepare,phpcs,phpmd,phpcpd,phpdoc"/>
 
     <property name="basedir" value="."/>
     <property name="appdir" value="${basedir}/app"/>
@@ -59,7 +59,15 @@
         </exec>
     </target>
 
-
+    <!-- phpdoc -->
+    <target name="phpdoc" description="Generate Application Documentation using phpDocumentor">
+        <exec dir="${basedir}" executable="${vendorbindir}/phpdoc" output="${basedir}/phpdoc.log" checkreturn="true">
+            <arg line="run"/>
+            <arg line="-d ${basedir}/app"/>
+            <arg line="-t ${basedir}/build/api/"/>
+            <arg line="-i ${appdir}/vendor/"/>
+        </exec>
+    </target>
 
 
 
