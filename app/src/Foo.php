@@ -31,4 +31,9 @@ class Foo
             $this->message = 'CANDY BAR';
         }
     }
+
+    public function hoge_hoge()
+    {
+        echo 'hoge';
+    }
 }

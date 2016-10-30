@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="study project" default="build">
 
-    <target name="build" depends="clean,prepare,phpcs"/>
+    <target name="build" depends="clean,prepare,phpcs,phpmd"/>
 
     <property name="basedir" value="."/>
     <property name="appdir" value="${basedir}/app"/>
@@ -26,14 +26,30 @@
             description="Find coding standard violations using PHP_CodeSniffer and log result in XML format">
         <exec executable="${vendorbindir}/phpcs" output="${basedir}/build/logs/phpcs.log">
             <arg value="--report=checkstyle"/>
-            <!--<arg value="&#45;&#45;report-file=${basedir}/build/logs/checkstyle.xml"/>-->
-            <arg line="--report-checkstyle=${basedir}/build/logs/checkstyle.xml" />
+            <arg value="--report-file=${basedir}/build/logs/checkstyle.xml"/>
             <arg value="--standard=PSR2"/>
             <arg value="--extensions=php"/>
             <arg path="${basedir}/app"/>
             <!--<arg path="${basedir}/tests"/>-->
         </exec>
     </target>
+
+    <!-- PHPMD -->
+    <target name="phpmd" depends="prepare"
+            description="Perform project mess detection using PHPMD and log result in XML format">
+        <exec executable="${vendorbindir}/phpmd" output="${basedir}/build/logs/phpmd.log">
+            <arg line="${basedir}/app"/>
+            <arg line="xml"/>
+            <!--<arg path="${basedir}/build/phpmd.xml"/>-->
+            <arg line="codesize,controversial,design,naming,unusedcode"/>
+            <arg line="--exclude ${basedir}/tests,${basedir}/vendor"/>
+            <arg line="--reportfile"/>
+            <arg line="${basedir}/build/logs/phpmd.xml"/>
+        </exec>
+    </target>
+
+
+
 
 
 
@@ -66,24 +82,8 @@
 
 
 
-    <!-- PHPMD -->
-    <target name="phpmd" description="Perform project mess detection using PHPMD">
-        <exec dir="${basedir}" executable="${vendorbindir}/phpmd" output="${outputdir}/phpmd.log">
-            <arg line="${appdir}" />
-            <arg line="xml" />
-            <arg line="codesize,unusedcode,design,naming" />
-            <arg line="--exclude ${appdir}/Test,${appdir}/Vendor,${appdir}/Plugin,${appdir}/Config/Migration,${appdir}/Config/Schema" />
-            <arg line="--reportfile ${outputdir}/phpmd.xml" />
-        </exec>
-    </target>
 
-    <!-- PHP_CodeSniffer -->
-    <target name="phpcs" description="Generate phpcs.xml using PHP_CodeSniffer" >
-        <mkdir dir="${outputdir}" />
-        <phpcodesniffer standard="PSR2" file="${appdir}/" allowedFileExtensions="php" >
-            <formatter type="checkstyle" outfile="${outputdir}/phpcs.xml"/>
-        </phpcodesniffer>
-    </target>
+
 
     <!-- PHPUNIT -->
     <target name="phpunit">
