@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="study project" default="build">
 
-    <target name="build" depends="clean,prepare,phpcs,phpmd,phpcpd,phpdoc,phploc"/>
+    <target name="build" depends="clean,prepare,phpcs,phpmd,phpcpd,phpdoc,phploc,phploc-ci"/>
 
     <property name="basedir" value="."/>
     <property name="appdir" value="${basedir}/app"/>
@@ -70,7 +70,15 @@
     </target>
 
     <!-- PHPLOC -->
-    <target name="phploc" depends="prepare"
+    <target name="phploc" description="Measure project size using PHPLOC">
+        <exec executable="${basedir}/build/tools/phploc.phar">
+            <arg value="--count-tests"/>
+            <arg path="${basedir}/app"/>
+            <arg path="${basedir}/tests"/>
+        </exec>
+    </target>
+
+    <target name="phploc-ci" depends="prepare"
             description="Measure project size using PHPLOC and log result in CSV and XML format">
         <exec executable="${vendorbindir}/phploc">
             <arg value="--count-tests"/>
