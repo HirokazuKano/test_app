@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="study project" default="build">
 
-    <target name="build" depends="clean,prepare,phpcs,phpmd"/>
+    <target name="build" depends="clean,prepare,phpcs,phpmd,phpcpd"/>
 
     <property name="basedir" value="."/>
     <property name="appdir" value="${basedir}/app"/>
@@ -48,36 +48,15 @@
         </exec>
     </target>
 
-
-
-
-
-
     <!-- PHPCPD -->
-    <target name="phpcpd" description="Find duplicate code using PHPCPD">
-        <mkdir dir="${outputdir}"/>
-        <echo>Find duplicate code using PHPCPD</echo>
-        <phpcpd>
-            <!-- 対象ディレクトリをmain下に設定 -->
-            <fileset dir="${appdir}">
-                <!-- 全てのphpファイルのみを対象にする -->
-                <include name="**/*.php" />
-                <!-- vendorsディレクトリ下を対象外にする -->
-                <exclude name="vendor/" />
-            </fileset>
-            <formatter type="pmd" outfile="${outputdir}/cpd.xml"/>
-        </phpcpd>
-    </target>
-
-    <target name="phpdoc2" description="Find duplicate code using PHPCPD">
-        <phpdoc title="API Documentation"
-                destdir="${outputdir}"
-                sourcecode="false"
-                output="HTML:Smarty:PHP">
-            <fileset dir="${appdir}">
-                <include name="**/*.php" />
-            </fileset>
-        </phpdoc>
+    <target name="phpcpd" depends="prepare"
+            description="Find duplicate code using PHPCPD and log result in XML format">
+        <exec executable="${vendorbindir}/phpcpd" output="${basedir}/build/logs/phpcpd.log">
+            <arg line="--exclude vendor"/>
+            <arg line="--log-pmd ${basedir}/build/logs/phpcpd.xml"/>
+            <arg line="--names *.php,*.cpt" />
+            <arg line="${basedir}/app"/>
+        </exec>
     </target>
 
 
