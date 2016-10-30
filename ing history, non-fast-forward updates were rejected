@@ -1,0 +1,59 @@
+commit bbed3dcb6c4235cbc0c14b0fa980c9f95b21b97c
+Author: test@test.com <vagrant@study.(none)>
+Date:   Sun Oct 30 15:30:41 2016 +0900
+
+    phplocログ表示追加
+
+commit d343712487396f24671c33ed261687f62866e1a1
+Author: test@test.com <vagrant@study.(none)>
+Date:   Sun Oct 30 15:23:39 2016 +0900
+
+    phploc debug表示追加
+
+commit 5dc5d46660a44914465ed2a8a43b2682df3b89fb
+Author: test@test.com <vagrant@study.(none)>
+Date:   Sun Oct 30 15:15:40 2016 +0900
+
+    phploc追加
+
+commit ab7bd147695f1d3e4c8a643f0926c990a8f480fe
+Author: test@test.com <vagrant@study.(none)>
+Date:   Sun Oct 30 14:45:57 2016 +0900
+
+    phpdoc追加
+
+commit 79e2f071bc88cbf537fbf986493e601cd6bb0511
+Author: test@test.com <vagrant@study.(none)>
+Date:   Sun Oct 30 11:07:01 2016 +0900
+
+    phpcpd追加
+
+commit e8d0d1145cafe472b6b109d24459de97e7aa100a
+Author: test@test.com <vagrant@study.(none)>
+Date:   Sun Oct 30 10:31:59 2016 +0900
+
+    phpmdを追加
+
+commit 017add0febe59846f5c51f0e7849c8731e164e2e
+Author: test@test.com <vagrant@study.(none)>
+Date:   Sun Oct 30 09:29:15 2016 +0900
+
+    PSR-2に修正
+
+commit e264791a690e8cdc18e5089aaa5257ce6f6f635f
+Author: test@test.com <vagrant@study.(none)>
+Date:   Sun Oct 30 08:18:54 2016 +0900
+
+    phpcs追加
+
+commit 19b135c3fd149b32a764555cc8c5939496d4d39f
+Author: test@test.com <vagrant@study.(none)>
+Date:   Fri Oct 28 15:18:18 2016 +0900
+
+    phingプライグインを追加
+
+commit 888e394904826679fadffa5265ddaa55449701bc
+Author: vagrant <vagrant@study.(none)>
+Date:   Fri Oct 28 09:06:50 2016 +0900
+
+    first commit
