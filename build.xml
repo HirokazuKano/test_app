@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="study project" default="build">
 
-    <target name="build" depends="clean,prepare,phpcs,phpmd,phpcpd,phpdoc,phploc,phploc-ci"/>
+    <target name="build" depends="clean,prepare,phpcs,phpmd,phpcpd,phpdoc,phploc-ci"/>
 
     <property name="basedir" value="."/>
     <property name="appdir" value="${basedir}/app"/>
@@ -81,13 +81,13 @@
     <target name="phploc-ci" depends="prepare"
             description="Measure project size using PHPLOC and log result in CSV and XML format">
         <exec executable="${vendorbindir}/phploc">
-            <arg value="--count-tests"/>
-            <arg value="--log-csv"/>
-            <arg path="${basedir}/build/logs/phploc.csv"/>
-            <arg value="--log-xml"/>
-            <arg path="${basedir}/build/logs/phploc.xml"/>
-            <arg path="${basedir}/app"/>
-            <arg path="${basedir}/tests"/>
+            <arg line="--count-tests"/>
+            <arg line="--log-csv"/>
+            <arg line="${basedir}/build/logs/phploc.csv"/>
+            <arg line="--log-xml"/>
+            <arg line="${basedir}/build/logs/phploc.xml"/>
+            <arg line="${basedir}/app"/>
+            <arg line="${basedir}/tests"/>
         </exec>
     </target>
 
