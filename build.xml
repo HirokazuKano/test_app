@@ -71,7 +71,7 @@
 
     <!-- PHPLOC -->
     <target name="phploc" description="Measure project size using PHPLOC">
-        <exec executable="${basedir}/build/tools/phploc.phar">
+        <exec executable="${vendorbindir}/phploc">
             <arg value="--count-tests"/>
             <arg path="${basedir}/app"/>
             <arg path="${basedir}/tests"/>
@@ -90,7 +90,6 @@
             <arg path="${basedir}/tests"/>
         </exec>
     </target>
-
 
     <!-- PHPUNIT -->
     <target name="phpunit">
