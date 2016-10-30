@@ -61,7 +61,7 @@
 
     <!-- PHPDOC -->
     <target name="phpdoc" description="Generate Application Documentation using phpDocumentor">
-        <exec dir="${basedir}" executable="${vendorbindir}/phpdoc" output="${basedir}/phpdoc.log" checkreturn="true">
+        <exec dir="${basedir}" executable="${vendorbindir}/phpdoc" output="${basedir}/phpdoc.log">
             <arg line="run"/>
             <arg line="-d ${basedir}/app"/>
             <arg line="-t ${basedir}/build/api/"/>
