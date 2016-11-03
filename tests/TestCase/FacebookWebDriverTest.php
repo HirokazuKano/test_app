@@ -30,7 +30,7 @@ class FacebookWebDriverTest extends PHPUnit_Framework_TestCase
         // checking that page title contains word 'Composer'
         $this->assertContains('Composer', $this->webDriver->getTitle());
         // スクリーンショット取得
-        $this->webDriver->takeScreenshot('img/' . 'composer.png');
+        $this->webDriver->takeScreenshot('build/snapshot/' . 'composer.png');
     }
 
     public function testIndexTitle()
@@ -38,7 +38,7 @@ class FacebookWebDriverTest extends PHPUnit_Framework_TestCase
         $this->webDriver->get('http://localhost/phpunit_study/unittest/app/');
         $this->assertContains('Test', $this->webDriver->getTitle());
         // スクリーンショット取得
-        $this->webDriver->takeScreenshot('img/' . 'title.png');
+        $this->webDriver->takeScreenshot('build/snapshot/' . 'title.png');
     }
 
     public function tearDown()
