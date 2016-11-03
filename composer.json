@@ -9,6 +9,7 @@
     }
   },
   "require": {
+    "facebook/webdriver": "^1.2"
   },
   "require-dev": {
     "phpunit/phpunit": "5.6.*",

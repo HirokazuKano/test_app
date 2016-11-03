@@ -6,3 +6,4 @@ build/pdepend
 build/phpdox
 build/testdox
 vendor
+Thumbs.db
