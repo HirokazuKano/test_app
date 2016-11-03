@@ -21,7 +21,7 @@ class FacebookWebDriverTest extends PHPUnit_Framework_TestCase
     {
         //$capabilities = array(WebDriverCapabilityType::BROWSER_NAME => 'firefox');
         //$this->webDriver = RemoteWebDriver::create('http://localhost:4444/wd/hub', $capabilities);
-        $this->webDriver = RemoteWebDriver::create('http://localhost:4444/wd/hub', DesiredCapabilities::firefox());
+        $this->webDriver = RemoteWebDriver::create('http://localhost:4444/wd/hub', DesiredCapabilities::chrome());
     }
 
     public function testComposerTitle()
@@ -35,7 +35,7 @@ class FacebookWebDriverTest extends PHPUnit_Framework_TestCase
 
     public function testIndexTitle()
     {
-        $this->webDriver->get('http://localhost/phpunit_study/unittest/app/');
+        $this->webDriver->get('http://192.168.33.22/phpunit_study/unittest/app/');
         $this->assertContains('Test', $this->webDriver->getTitle());
         // スクリーンショット取得
         $this->webDriver->takeScreenshot('build/snapshot/' . 'title.png');

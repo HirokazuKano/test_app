@@ -6,7 +6,7 @@ build/pdepend
 build/phpdox
 build/testdox
 build/snapshot
-img/
+selenium_server
 vendor
 Thumbs.db
 build.org.xml
