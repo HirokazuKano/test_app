@@ -23,20 +23,9 @@ class DataProviderTest extends PHPUnit_Framework_TestCase
     public function testProducerSecond()
     {
         $this->assertTrue(true);
-        return 'second';
+        return 'seconddd';
     }
 
-    /**
-     * @depends testProducerFirst
-     * @depends testProducerSecond
-     * @dataProvider provider
-     */
-    public function testConsumer()
-    {
-        $this->markTestIncomplete(
-            'このテストは、まだ実装されていません。'
-        );
-    }
 
     /**
      * @dataProvider additionProvider

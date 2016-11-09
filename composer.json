@@ -19,7 +19,8 @@
     "sebastian/phpcpd": "*",
     "squizlabs/php_codesniffer": "*",
     "phpdocumentor/phpdocumentor": "2.*",
-    "phploc/phploc": "*"
+    "phploc/phploc": "*",
+    "piece/stagehand-testrunner": "4.2.*"
   }
 
 }

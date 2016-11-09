@@ -4,57 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "26008c4f457d474379f5d944ccca3a66",
-    "content-hash": "5509383e0a90ec19ed7293f279768613",
-    "packages": [
-        {
-            "name": "facebook/webdriver",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/facebook/php-webdriver.git",
-                "reference": "af21de3ae5306a8ca0bcc02a19735dadc43e83f3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/facebook/php-webdriver/zipball/af21de3ae5306a8ca0bcc02a19735dadc43e83f3",
-                "reference": "af21de3ae5306a8ca0bcc02a19735dadc43e83f3",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "php": "^5.5 || ~7.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^1.11",
-                "php-mock/php-mock-phpunit": "^1.1",
-                "phpunit/phpunit": "4.6.* || ~5.0",
-                "squizlabs/php_codesniffer": "^2.6"
-            },
-            "suggest": {
-                "phpdocumentor/phpdocumentor": "2.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Facebook\\WebDriver\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "description": "A PHP client for WebDriver",
-            "homepage": "https://github.com/facebook/php-webdriver",
-            "keywords": [
-                "facebook",
-                "php",
-                "selenium",
-                "webdriver"
-            ],
-            "time": "2016-10-14 15:16:51"
-        }
-    ],
+    "hash": "3b835fd02c2e3c7aca0549476d284f5d",
+    "content-hash": "544fae2f3187e8d24c0a00c8e1acd485",
+    "packages": [],
     "packages-dev": [
         {
             "name": "cilex/cilex",
@@ -417,6 +369,53 @@
             "time": "2015-10-04 16:44:32"
         },
         {
+            "name": "facebook/webdriver",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/facebook/php-webdriver.git",
+                "reference": "af21de3ae5306a8ca0bcc02a19735dadc43e83f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/facebook/php-webdriver/zipball/af21de3ae5306a8ca0bcc02a19735dadc43e83f3",
+                "reference": "af21de3ae5306a8ca0bcc02a19735dadc43e83f3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": "^5.5 || ~7.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^1.11",
+                "php-mock/php-mock-phpunit": "^1.1",
+                "phpunit/phpunit": "4.6.* || ~5.0",
+                "squizlabs/php_codesniffer": "^2.6"
+            },
+            "suggest": {
+                "phpdocumentor/phpdocumentor": "2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Facebook\\WebDriver\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "A PHP client for WebDriver",
+            "homepage": "https://github.com/facebook/php-webdriver",
+            "keywords": [
+                "facebook",
+                "php",
+                "selenium",
+                "webdriver"
+            ],
+            "time": "2016-10-14 15:16:51"
+        },
+        {
             "name": "herrera-io/json",
             "version": "1.0.3",
             "source": {
@@ -622,16 +621,16 @@
         },
         {
             "name": "jms/serializer",
-            "version": "1.3.1",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "705d0b4633b9c44e6253aa18306b3972282cd3a3"
+                "reference": "c0c1af0d9f1a710c7fbae1732dadc4d913980299"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/705d0b4633b9c44e6253aa18306b3972282cd3a3",
-                "reference": "705d0b4633b9c44e6253aa18306b3972282cd3a3",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/c0c1af0d9f1a710c7fbae1732dadc4d913980299",
+                "reference": "c0c1af0d9f1a710c7fbae1732dadc4d913980299",
                 "shasum": ""
             },
             "require": {
@@ -649,6 +648,7 @@
             "require-dev": {
                 "doctrine/orm": "~2.1",
                 "doctrine/phpcr-odm": "^1.3|^2.0",
+                "ext-pdo_sqlite": "*",
                 "jackalope/jackalope-doctrine-dbal": "^1.1.5",
                 "phpunit/phpunit": "^4.8|^5.0",
                 "propel/propel1": "~1.7",
@@ -665,7 +665,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -692,7 +692,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2016-08-23 17:20:24"
+            "time": "2016-11-02 16:15:37"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -882,16 +882,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.5.4",
+            "version": "1.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "ea74994a3dc7f8d2f65a06009348f2d63c81e61f"
+                "reference": "399c1f9781e222f6eb6cc238796f5200d1b7f108"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/ea74994a3dc7f8d2f65a06009348f2d63c81e61f",
-                "reference": "ea74994a3dc7f8d2f65a06009348f2d63c81e61f",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/399c1f9781e222f6eb6cc238796f5200d1b7f108",
+                "reference": "399c1f9781e222f6eb6cc238796f5200d1b7f108",
                 "shasum": ""
             },
             "require": {
@@ -920,7 +920,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2016-09-16 13:37:59"
+            "time": "2016-10-31 17:19:45"
         },
         {
             "name": "nikic/php-parser",
@@ -1656,16 +1656,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "4.0.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "5f3f7e736d6319d5f1fc402aff8b026da26709a3"
+                "reference": "6cba06ff75a1a63a71033e1a01b89056f3af1e8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/5f3f7e736d6319d5f1fc402aff8b026da26709a3",
-                "reference": "5f3f7e736d6319d5f1fc402aff8b026da26709a3",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6cba06ff75a1a63a71033e1a01b89056f3af1e8d",
+                "reference": "6cba06ff75a1a63a71033e1a01b89056f3af1e8d",
                 "shasum": ""
             },
             "require": {
@@ -1715,7 +1715,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-07-26 14:39:29"
+            "time": "2016-11-01 05:06:24"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -2038,6 +2038,162 @@
                 "xunit"
             ],
             "time": "2016-10-09 07:01:45"
+        },
+        {
+            "name": "piece/stagehand-alterationmonitor",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/piece/stagehand-alterationmonitor.git",
+                "reference": "a54efc033371766e93e9cec5c7f976bfd44d51fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/piece/stagehand-alterationmonitor/zipball/a54efc033371766e93e9cec5c7f976bfd44d51fd",
+                "reference": "a54efc033371766e93e9cec5c7f976bfd44d51fd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Stagehand\\AlterationMonitor": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "KUBO Atsuhiro",
+                    "email": "kubo@iteman.jp"
+                }
+            ],
+            "description": "A file alteration monitor",
+            "homepage": "http://redmine.piece-framework.com/projects/stagehand-componentfactory",
+            "keywords": [
+                "alteration monitoring"
+            ],
+            "time": "2012-04-11 03:13:40"
+        },
+        {
+            "name": "piece/stagehand-componentfactory",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/piece/stagehand-componentfactory.git",
+                "reference": "d38890fa8a9a813f5f4c39471654a9de3ca0291c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/piece/stagehand-componentfactory/zipball/d38890fa8a9a813f5f4c39471654a9de3ca0291c",
+                "reference": "d38890fa8a9a813f5f4c39471654a9de3ca0291c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.3.2",
+                "symfony/dependency-injection": ">=2.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Stagehand\\ComponentFactory": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2"
+            ],
+            "authors": [
+                {
+                    "name": "KUBO Atsuhiro",
+                    "email": "kubo@iteman.jp"
+                }
+            ],
+            "description": "A component factory with the Symfony DependencyInjection component",
+            "homepage": "http://piece-framework.com/projects/stagehand-componentfactory",
+            "keywords": [
+                "dependency injection"
+            ],
+            "time": "2012-05-03 08:23:21"
+        },
+        {
+            "name": "piece/stagehand-testrunner",
+            "version": "v4.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/piece/stagehand-testrunner.git",
+                "reference": "1d685ea1140a71a37b20b60ab4cfed0656bf1020"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/piece/stagehand-testrunner/zipball/1d685ea1140a71a37b20b60ab4cfed0656bf1020",
+                "reference": "1d685ea1140a71a37b20b60ab4cfed0656bf1020",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-mbstring": "*",
+                "ext-pcre": "*",
+                "ext-spl": "*",
+                "php": ">=5.3.3",
+                "piece/stagehand-alterationmonitor": "~2.0",
+                "piece/stagehand-componentfactory": "~1.0",
+                "sebastian/version": "~1.0",
+                "symfony/config": "~2.0",
+                "symfony/console": "~2.0",
+                "symfony/dependency-injection": "~2.0",
+                "symfony/finder": "~2.0",
+                "symfony/process": "~2.0",
+                "symfony/yaml": "~2.0"
+            },
+            "require-dev": {
+                "phake/phake": "1.0.*",
+                "phpunit/phpunit": ">=3.7.0"
+            },
+            "suggest": {
+                "phpunit/phpunit": "For using PHPUnit"
+            },
+            "bin": [
+                "bin/testrunner"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stagehand\\TestRunner\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "KUBO Atsuhiro",
+                    "email": "kubo@iteman.jp"
+                }
+            ],
+            "description": "A continuous test runner for CLI",
+            "homepage": "https://github.com/piece/stagehand-testrunner/wiki",
+            "keywords": [
+                "cli",
+                "testing"
+            ],
+            "time": "2016-04-05 05:23:31"
         },
         {
             "name": "pimple/pimple",
@@ -2739,27 +2895,19 @@
         },
         {
             "name": "sebastian/version",
-            "version": "2.0.0",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/version.git",
-                "reference": "c829badbd8fdf16a0bad8aa7fa7971c029f1b9c5"
+                "reference": "58b3a85e7999757d6ad81c787a1fbf5ff6c628c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/version/zipball/c829badbd8fdf16a0bad8aa7fa7971c029f1b9c5",
-                "reference": "c829badbd8fdf16a0bad8aa7fa7971c029f1b9c5",
+                "url": "https://api.github.com/repos/sebastianbergmann/version/zipball/58b3a85e7999757d6ad81c787a1fbf5ff6c628c6",
+                "reference": "58b3a85e7999757d6ad81c787a1fbf5ff6c628c6",
                 "shasum": ""
             },
-            "require": {
-                "php": ">=5.6"
-            },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
             "autoload": {
                 "classmap": [
                     "src/"
@@ -2778,7 +2926,7 @@
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
-            "time": "2016-02-04 12:56:52"
+            "time": "2015-06-21 13:59:46"
         },
         {
             "name": "seld/jsonlint",
@@ -3077,25 +3225,28 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v3.1.6",
+            "version": "v2.8.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "c578891216090069cd6d2e573402e13e39b3ad5c"
+                "reference": "3d61c765daa1a5832f1d7c767f48886b8d8ea64c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/c578891216090069cd6d2e573402e13e39b3ad5c",
-                "reference": "c578891216090069cd6d2e573402e13e39b3ad5c",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/3d61c765daa1a5832f1d7c767f48886b8d8ea64c",
+                "reference": "3d61c765daa1a5832f1d7c767f48886b8d8ea64c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": ">=5.3.9"
+            },
+            "conflict": {
+                "symfony/expression-language": "<2.6"
             },
             "require-dev": {
-                "symfony/config": "~2.8|~3.0",
-                "symfony/expression-language": "~2.8|~3.0",
-                "symfony/yaml": "~2.8.7|~3.0.7|~3.1.1|~3.2"
+                "symfony/config": "~2.2|~3.0.0",
+                "symfony/expression-language": "~2.6|~3.0.0",
+                "symfony/yaml": "~2.3.42|~2.7.14|~2.8.7|~3.0.7"
             },
             "suggest": {
                 "symfony/config": "",
@@ -3106,7 +3257,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
@@ -3133,7 +3284,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-24 15:52:44"
+            "time": "2016-10-24 15:52:36"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -3589,25 +3740,25 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.1.6",
+            "version": "v2.8.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27"
+                "reference": "396784cd06b91f3db576f248f2402d547a077787"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/7ff51b06c6c3d5cc6686df69004a42c69df09e27",
-                "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/396784cd06b91f3db576f248f2402d547a077787",
+                "reference": "396784cd06b91f3db576f248f2402d547a077787",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": ">=5.3.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
@@ -3634,7 +3785,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-24 18:41:13"
+            "time": "2016-10-21 20:59:10"
         },
         {
             "name": "theseer/fdomdocument",
